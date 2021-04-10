@@ -22,9 +22,7 @@ For this project to work, it must have a Telegram channel, an active bot with ad
 
 ## Setting Up Server
 
-I have been working on the setup.py file to automate the server setup process.
-
-[facebook-scraper](https://github.com/kevinzg/facebook-scraper) only gets the last two or three posts, keep that in mind if your pages posts more than 3 times in two minutes, or just change the check interval accordingly.  
+Run the setup.py file to automate the server setup process.
 
 ## What's working
 Right now the library used only retrieves text posts and photos, so no videos, shares or others
