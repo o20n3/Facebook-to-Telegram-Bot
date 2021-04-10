@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+#Get all the necessary tools
 import telegram, threading
 from facebook_scraper import get_posts
 from datetime import datetime
@@ -8,17 +9,19 @@ from tempfile import NamedTemporaryFile
 import shutil
 import bot_conf
 
+#Pull the bot 'TOKEN' and Telegram 'chat_id' added during setup
 TOKEN = bot_conf.TOKEN
 bot = telegram.Bot(TOKEN)
-
 chat_id = bot_conf.chat_id
 
+#Pull data from csv input from setup
 date_format = '%Y-%m-%d %H:%M:%S'
-
 fields = ['telegram_name', 'fbpage_tag', 'last_post_date']
 
+#Define value for time between checks
 WAIT_SECONDS = 120
 
+#Scraping and composing of posts sent to Telegram Bot
 def check():
     with open('fbpages.csv', mode='r+') as csv_file, NamedTemporaryFile(mode='w', delete=False) as tempfile:
         csv_reader = csv.DictReader(csv_file)
